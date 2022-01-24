@@ -70,8 +70,8 @@ public class BurgerTest {
 
     @Test
     public void getReceiptTest() {
-        String nameBun = "bun";
-        String nameIngredient = "cheese";
+        String nameBun = "red bun";
+        String nameIngredient = "dinosaur";
         IngredientType ingredientType = FILLING;
         float price = ingredient.getPrice();
         String expectedReceipt = "(==== " + nameBun + " ====)\r\n" +
