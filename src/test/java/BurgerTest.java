@@ -30,20 +30,20 @@ public class BurgerTest {
     @Test
     public void setBunsTest() {
         burger.setBuns(bun);
-        Assert.assertEquals(burger.bun, bun);
+        Assert.assertEquals("булочка не выбрана",burger.bun, bun);
     }
 
     @Test
     public void addIngredientTest() {
         burger.addIngredient(ingredient);
-        Assert.assertNotNull(burger.ingredients);
+        Assert.assertNotNull("ингредиент не добавлен",burger.ingredients);
     }
 
     @Test
     public void removeIngredientTest() {
         burger.addIngredient(ingredient);
         burger.removeIngredient(0);
-        Assert.assertTrue(burger.ingredients.isEmpty());
+        Assert.assertTrue("ингредиент не удален",burger.ingredients.isEmpty());
     }
 
 
@@ -54,7 +54,7 @@ public class BurgerTest {
         burger.addIngredient(ingredient);
         burger.addIngredient(mock);
         burger.moveIngredient(1, 0);
-        Assert.assertEquals(expectedName, burger.ingredients.get(0).toString());
+        Assert.assertEquals("ингредиент не перемещен",expectedName, burger.ingredients.get(0).toString());
     }
 
     @Test
@@ -65,7 +65,7 @@ public class BurgerTest {
         when(ingredient.getPrice()).thenReturn(price);
         burger.setBuns(bun);
         burger.addIngredient(ingredient);
-        Assert.assertEquals(expectedPrice, burger.getPrice(), 0.0);
+        Assert.assertEquals("получена некорректная цена",expectedPrice, burger.getPrice(), 0.0);
     }
 
     @Test
@@ -83,6 +83,6 @@ public class BurgerTest {
         when(ingredient.getName()).thenReturn(nameIngredient);
         when(ingredient.getType()).thenReturn(ingredientType);
         burger.addIngredient(ingredient);
-        Assert.assertEquals(expectedReceipt, burger.getReceipt());
+        Assert.assertEquals("получен некорректный рецепт",expectedReceipt, burger.getReceipt());
     }
 }

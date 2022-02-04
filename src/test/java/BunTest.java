@@ -36,12 +36,12 @@ public class BunTest {
     @Test
     public void getNameTest() {
         String actualName = bun.getName();
-        Assert.assertEquals(name, actualName);
+        Assert.assertEquals("получено некорректное наименование",name, actualName);
     }
 
     @Test
     public void getPriceTest() {
         float actualPrice = bun.getPrice();
-        Assert.assertEquals(price, actualPrice, 0.0);
+        Assert.assertEquals("получена некорректная цена",price, actualPrice, 0.0);
     }
 }

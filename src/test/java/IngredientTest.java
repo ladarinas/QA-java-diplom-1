@@ -41,18 +41,18 @@ public class IngredientTest {
     @Test
     public void getNameTest() {
         String actualName = ingredient.getName();
-        Assert.assertEquals(name, actualName);
+        Assert.assertEquals("наименование не соответствует",name, actualName);
     }
 
     @Test
     public void getPriceTest() {
         float actualPrice = ingredient.getPrice();
-        Assert.assertEquals(price, actualPrice, 0.0);
+        Assert.assertEquals("цена не соответствует",price, actualPrice, 0.0);
     }
 
     @Test
     public void getTypeTest() {
         IngredientType actualIngredientType = ingredient.getType();
-        Assert.assertEquals(type, actualIngredientType);
+        Assert.assertEquals("тип не соответствует",type, actualIngredientType);
     }
 }

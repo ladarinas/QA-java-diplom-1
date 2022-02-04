@@ -28,6 +28,6 @@ public class IngredientTypeTest {
 
     @Test
     public void getIngredientTypeTest() {
-        Assert.assertEquals(IngredientType.valueOf(expectedType), actualType);
+        Assert.assertEquals("получен некорректный тип",IngredientType.valueOf(expectedType), actualType);
     }
 }
